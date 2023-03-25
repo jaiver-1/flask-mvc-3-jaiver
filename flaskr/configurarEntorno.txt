@@ -1,0 +1,12 @@
+py -m venv .venv
+$ source .venv/scripts/activate
+
+py -m pip install --upgrade pip  
+
+
+
+pip install -r requirements.txt
+
+
+
+******* pip freeze > requirements.txt  despues del entorno del desarrollo  si no se tiene el archivo txt para intalar todo automatico

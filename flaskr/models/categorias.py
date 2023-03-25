@@ -14,11 +14,11 @@ def obtener_categorias():
     conexion.close()
     return categorias
 
-def crear_categoria(categoria):
+def crear_categoria(_categoria):
     conexion = obtener_conexion()
     with conexion.cursor() as cursor:
         consulta = "INSERT INTO categorias (categoria) VALUES('{}')"\
-            .format(categoria.categoria)
+            .format(_categoria.categoria)
         cursor.execute(consulta)
         conexion.commit()
     conexion.close()
