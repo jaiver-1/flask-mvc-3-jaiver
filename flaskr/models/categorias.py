@@ -13,3 +13,12 @@ def obtener_categorias():
         categorias = cursor.fetchall()
     conexion.close()
     return categorias
+
+def crear_categoria(categoria):
+    conexion = obtener_conexion()
+    with conexion.cursor() as cursor:
+        consulta = "INSERT INTO categorias (categoria) VALUES('{}')"\
+            .format(categoria.categoria)
+        cursor.execute(consulta)
+        conexion.commit()
+    conexion.close()
